@@ -1,0 +1,3 @@
+Symlinking /root/Rover/RM-01/devel/share/mark1_gazebo/cmake/mark1_gazeboConfig-version.cmake
+Symlinking /root/Rover/RM-01/devel/share/mark1_gazebo/cmake/mark1_gazeboConfig.cmake
+Symlinking /root/Rover/RM-01/devel/lib/pkgconfig/mark1_gazebo.pc

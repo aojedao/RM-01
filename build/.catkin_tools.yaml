@@ -1,0 +1,6 @@
+devel_space: /root/Rover/RM-01/devel
+install: false
+install_space: /root/Rover/RM-01/install
+profile: default
+source_space: /root/Rover/RM-01/src
+workspace: /root/Rover/RM-01

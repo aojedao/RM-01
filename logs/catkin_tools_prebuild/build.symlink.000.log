@@ -1,0 +1,12 @@
+Symlinking /root/Rover/RM-01/devel/./_setup_util.py
+Symlinking /root/Rover/RM-01/devel/./env.sh
+Symlinking /root/Rover/RM-01/devel/./local_setup.zsh
+Symlinking /root/Rover/RM-01/devel/./local_setup.sh
+Symlinking /root/Rover/RM-01/devel/./setup.zsh
+Symlinking /root/Rover/RM-01/devel/./local_setup.bash
+Symlinking /root/Rover/RM-01/devel/./cmake.lock
+Symlinking /root/Rover/RM-01/devel/./setup.bash
+Symlinking /root/Rover/RM-01/devel/./setup.sh
+Symlinking /root/Rover/RM-01/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
+Symlinking /root/Rover/RM-01/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
+Symlinking /root/Rover/RM-01/devel/lib/pkgconfig/catkin_tools_prebuild.pc

@@ -1,0 +1,1 @@
+/usr/local/bin/cmake -S/root/Rover/RM-01/src/mark1_description -B/root/Rover/RM-01/build/mark1_description --check-build-system CMakeFiles/Makefile.cmake 0

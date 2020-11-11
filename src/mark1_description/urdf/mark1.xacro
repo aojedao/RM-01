@@ -1,0 +1,81 @@
+<?xml version='1.0'?>
+
+<robot name="mark1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!--xacro:include filename="$(find astromech_description)/urdf/materials.xacro" /-->
+  <!--xacro:include filename="$(find astromech_description)/urdf/macros.xacro"/--> 
+
+
+
+<link name='chassis'>
+    <pose>299 195.4 211.8 0 0 0</pose >
+<!-- estos valores no se si sirve/-->
+    <inertial>
+      <mass value="4"/>
+      <origin xyz="299.0 195.4 211.8" rpy=" 0 0 0"/>
+      <inertia
+          ixx="0.0001" ixy="0" ixz="0"
+          iyy="0.0001" iyz="0"
+          izz="0.0001"
+      />
+    </inertial>
+
+    <collision name='collision'>
+      <origin xyz="299 195.4 211.8" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="200.0 200.0 100.0"/>
+      </geometry>
+    </collision>
+
+    <visual name='chassis_visual'>
+      <origin xyz="299 195.4 211.8" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="200.0 200.0 100.0"/>
+      </geometry>
+    </visual>
+
+
+  </link>
+
+
+  <link name="right_leg_rocker">
+    <visual name="r_up_part">
+      <geometry>
+        <box size="219.5 25.4 25.4"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="308.59 82.7 211.79"/>
+    </visual>
+    <visual name="r_down_part">
+      <geometry>
+        <box size="219.5 25.4 25.4"/>
+      </geometry>
+      <origin rpy="0 -0.78 0" xyz="308.59 82.7 211.79"/>
+    </visual>
+  </link>
+
+  <link name="left_leg_rocker">
+    <visual name="l_up_part">
+      <geometry>
+        <box size="219.5 25.4 25.4"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="308.59 348.1 211.79"/>
+    </visual>
+    <visual name="l_down_part">
+      <geometry>
+        <box size="219.5 25.4 25.4"/>
+      </geometry>
+      <origin rpy="0 -0.78 0" xyz="308.59 348.1 211.79"/>
+    </visual>
+  </link>
+
+
+
+
+
+
+
+
+
+
+
+</robot>

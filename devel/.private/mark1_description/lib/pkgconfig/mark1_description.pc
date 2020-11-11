@@ -1,0 +1,8 @@
+prefix=/root/Rover/RM-01/devel/.private/mark1_description
+
+Name: mark1_description
+Description: Description of mark1_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
