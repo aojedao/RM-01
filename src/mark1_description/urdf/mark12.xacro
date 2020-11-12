@@ -7,16 +7,12 @@
 
 <link name='world'/>
 
-<<<<<<< HEAD
 <joint name="joint_n" type="fixed">
   <origin xyz="0.0 0.0 0.7" rpy="0.0 0.0 0.0"/>
   <parent link="world"/>
   <child link="chassis"/>
 </joint>
 
-=======
-<!-- Chassis, caja de control /-->
->>>>>>> 32d5fadcb82ac2d4b677fbfc44bfdaa544680a79
 <link name='chassis'>
     <pose>299 195.4 211.8 0 0 0</pose >
 <!-- estos valores no se si sirve/-->
@@ -50,7 +46,6 @@
 
 
 
-<<<<<<< HEAD
   <joint name="joint_1" type="revolute">
     <origin xyz="5 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <parent link="chassis"/>
@@ -58,9 +53,6 @@
     <axis xyz="0.0 0.0 1.0"/>
     <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
   </joint>
-=======
-<!-- Patas del rover, rocker es la larga, boogie la unida de dos ruedas /-->
->>>>>>> 32d5fadcb82ac2d4b677fbfc44bfdaa544680a79
 
   <link name="right_leg_rocker">
     <visual name="r_up_part">
@@ -114,56 +106,6 @@
       </geometry>
       <origin rpy="0 -0.78 0" xyz="308.59 348.1 211.79"/>
     </visual>
-<<<<<<< HEAD
-=======
-    <visual name="l_front_part">
-      <geometry>
-        <box size="219.5 25.4 25.4"/>
-      </geometry>
-      <origin rpy="0 -0.78 0" xyz="308.59 348.1 211.79"/>
-    </visual>
-  </link>
-
-
-
-
-  <link name="right_leg_boogie">
-    <visual name="r_up_part_rocker">
-      <geometry>
-        <box size="219.5 25.4 25.4"/>
-      </geometry>
-      <origin rpy="0 0 0" xyz="308.59 82.7 211.79"/>
-    </visual>
-    <visual name="r_down_part">
-      <geometry>
-        <box size="219.5 25.4 25.4"/>
-      </geometry>
-      <origin rpy="0 -0.78 0" xyz="308.59 82.7 211.79"/>
-    </visual>
-  </link>
-
-  <link name="left_leg_rocker">
-    <visual name="l_up_part">
-      <geometry>
-        <box size="219.5 25.4 25.4"/>
-      </geometry>
-      <origin rpy="0 0 0" xyz="308.59 348.1 211.79"/>
-    </visual>
-    <visual name="l_down_part">
-      <geometry>
-        <box size="219.5 25.4 25.4"/>
-      </geometry>
-      <origin rpy="0 -0.78 0" xyz="308.59 348.1 211.79"/>
-    </visual>
-  </link>
-
-
-<!-- estos valores no se si sirve/-->
-
-
-
-
->>>>>>> 32d5fadcb82ac2d4b677fbfc44bfdaa544680a79
 
     <inertial>
       <mass value="1"/>
