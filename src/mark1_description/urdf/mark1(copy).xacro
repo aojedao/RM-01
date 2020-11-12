@@ -4,40 +4,53 @@
 
   <!--xacro:include filename="$(find astromech_description)/urdf/materials.xacro" /-->
   <!--xacro:include filename="$(find astromech_description)/urdf/macros.xacro"/--> 
+  <link name="world"></link>
+
+  <joint name="joint_n" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="world"/>
+    <child link="chassis"/>
+  </joint>
 
 
-<!-- Chassis, caja de control /-->
-<link name='chassis'>
-    <pose>0.299 0.1954 0.2118 0 0 0</pose >
-<!-- estos valores no se si sirve/-->
-    <inertial>
-      <mass value="4"/>
-      <origin xyz="0.2990 0.1954 0.2118" rpy=" 0 0 0"/>
-      <inertia
-          ixx="0.0001" ixy="0" ixz="0"
-          iyy="0.0001" iyz="0"
-          izz="0.0001"
-      />
-    </inertial>
+  <!-- Chassis, caja de control /-->
+  <link name="chassis">
+      <pose>0.299 0.1954 0.2118 0 0 0</pose >
+    <!-- estos valores no se si sirve/-->
+      <inertial>
+        <mass value="4"/>
+        <origin xyz="0.2990 0.1954 0.2118" rpy=" 0 0 0"/>
+        <inertia
+            ixx="0.0001" ixy="0" ixz="0"
+            iyy="0.0001" iyz="0"
+            izz="0.0001"
+        />
+      </inertial>
 
-    <collision name='chassis_collision'>
-      <origin xyz="0.299 0.1954 0.2118" rpy=" 0 0 0"/>
-      <geometry>
-        <box size="0.2000 0.2000 0.1000"/>
-      </geometry>
-    </collision>
+      <collision name='chassis_collision'>
+        <origin xyz="0.299 0.1954 0.2118" rpy=" 0 0 0"/>
+        <geometry>
+          <box size="0.2000 0.2000 0.1000"/>
+        </geometry>
+      </collision>
 
-    <visual name='chassis_visual'>
-      <origin xyz="0.299 0.1954 0.2118" rpy=" 0 0 0"/>
-      <geometry>
-        <box size="0.02000 0.0200 0.01000"/>
-      </geometry>
-    </visual>
+      <visual name='chassis_visual'>
+        <origin xyz="0.299 0.1954 0.2118" rpy=" 0 0 0"/>
+        <geometry>
+          <box size="0.2000 0.200 0.1000"/>
+        </geometry>
+      </visual>
   </link>
 
+  <joint name="joint_1" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="chassis"/>
+    <child link="right_leg_rocker"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
 
-
-<!-- Patas del rover, rocker es la larga, boogie la unida de dos ruedas /-->
+  <!-- Patas del rover, rocker es la larga, boogie la unida de dos ruedas /-->
 
 
   <!-- Rocker de ambas patas, es decir las de atras /-->
@@ -85,6 +98,14 @@
 
   </link>
 
+  <joint name="joint_2" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="chassis"/>
+    <child link="left_leg_rocker"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
+
   <link name="left_leg_rocker">
 
     <!-- visual /-->
@@ -128,7 +149,13 @@
     </collision>
   </link>
 
--
+  <joint name="joint_3" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="right_leg_rocker"/>
+    <child link="right_leg_boogie"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
 
   <!-- Boogie de ambas patas, es decir las de atras /-->
   <link name="right_leg_boogie">
@@ -155,7 +182,7 @@
 
     <!-- collision /-->
     
-<collision name="r_base_collision">
+    <collision name="r_base_collision">
       <geometry>
         <box size="0.400 0.00254 0.00254"/>
       </geometry>
@@ -175,6 +202,14 @@
     </collision>
 
   </link>
+
+  <joint name="joint_4" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="left_leg_rocker"/>
+    <child link="left_leg_boogie"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
 
   <link name="left_leg_boogie">
 
@@ -219,7 +254,13 @@
     </collision>
   </link>
 
-
+  <joint name="joint_5" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="right_leg_boogie"/>
+    <child link="right_wheel_front"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
 
   <!--Llantas, son 6 en total 3 a cada lado  ..................... /-->
 
@@ -242,6 +283,14 @@
 
   </link>
 
+  <joint name="joint_6" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="right_leg_boogie"/>
+    <child link="right_wheel_medium"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
+
   <link name="right_wheel_medium">
 
     <visual name="right_wheel_medium_visual">
@@ -259,6 +308,14 @@
     </collision>
 
   </link>
+
+  <joint name="joint_7" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="right_leg_boogie"/>
+    <child link="right_wheel_back"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
 
   <link name="right_wheel_back">
 
@@ -278,7 +335,13 @@
 
   </link>
 
-
+  <joint name="joint_8" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="left_leg_boogie"/>
+    <child link="left_wheel_front"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
 
   <!--Llantas izquierdas/-->
   <link name="left_wheel_front">
@@ -299,6 +362,14 @@
 
   </link>
 
+  <joint name="joint_9" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="left_leg_boogie"/>
+    <child link="left_wheel_medium"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
+
   <link name="left_wheel_medium">
 
     <visual name="left_wheel_medium_visual">
@@ -317,6 +388,14 @@
 
   </link>
 
+  <joint name="joint_10" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="left_leg_boogie"/>
+    <child link="left_wheel_back"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
+
   <link name="left_wheel_back">
 
     <visual name="left_wheel_back_visual">
@@ -334,18 +413,5 @@
     </collision>
 
   </link>
-
-
-
-
-
-
-
-<!-- estos valores no se si sirve/-->
-
-
-
-
-
 
 </robot>
