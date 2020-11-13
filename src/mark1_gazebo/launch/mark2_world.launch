@@ -16,9 +16,9 @@
     <arg name="debug" value="$(arg debug)"/>
   </include>
 
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find mark1_description)/urdf/mark1_complete.xacro'"/>
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find mark1_description)/urdf/mark2.xacro'"/>
 
   <node name="kobuki_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
-   args="-urdf -param robot_description -model mark1" />
+   args="-urdf -param robot_description -model mark2" />
 
 </launch>

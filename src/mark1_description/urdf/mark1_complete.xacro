@@ -13,7 +13,6 @@
     <child link="chassis"/>
   </joint>
 
-
   <!-- Chassis, caja de control /-->
   <link name="chassis">
       <!-- pose>0.299 0.1954 0.2118 0 0 0</pose/-->
@@ -509,8 +508,5 @@
           izz="0.0001"/>
     </inertial>
   </link>
-
-
-
 
 </robot>
