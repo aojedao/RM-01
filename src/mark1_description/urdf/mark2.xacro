@@ -1,23 +1,23 @@
 <?xml version='1.0'?>
 
 <robot name="mark2" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <!--
+
     <link name="world"></link>
 
-    <joint name="joint_n" type="fixed">
+    <joint name="joint_n" type="floating">
         <origin xyz="0.0 0.0 0.2" rpy="0.0 0.0 0.0"/>
         <parent link="world"/>
         <child link="chassis"/>
     </joint>
-    -->
+
     <link name="chassis">
         <inertial>
-            <mass value="3"/>
+            <mass value="1.5"/>
             <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
             <inertia
-                ixx="0.05" ixy="0" ixz="0"
-                iyy="0.05" iyz="0"
-                izz="0.05"
+                ixx="0.00625" ixy="0" ixz="0"
+                iyy="0.00625" iyz="0"
+                izz="0.01"
             />
         </inertial>
 
@@ -196,25 +196,25 @@
         
         <collision name="r_base_collision">
             <geometry>
-                <box size="0.200 0.00254 0.00254"/>
+                <box size="0.200 0.0254 0.0254"/>
             </geometry>
             <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         </collision>
         <collision name="r_front_collision">
             <geometry>
-                <box size="0.00254 0.00254 0.0695"/>
+                <box size="0.0254 0.0254 0.0695"/>
             </geometry>
             <origin rpy="0 0 0" xyz="0.1 0.0 -0.03475"/>
         </collision>
         <collision name="r_back_collision">
             <geometry>
-                <box size="0.00254 0.00254 0.0695"/>
+                <box size="0.0254 0.0254 0.0695"/>
             </geometry>
             <origin rpy="0 0 0" xyz="-0.1 0.0 -0.03475"/>
         </collision>
 
         <inertial>
-        <mass value="0.001"/>
+        <mass value="0.01"/>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <inertia
             ixx="0.001" ixy="0" ixz="0"
@@ -277,7 +277,7 @@
         </collision>
 
         <inertial>
-        <mass value="0.001"/>
+        <mass value="0.01"/>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <inertia
             ixx="0.001" ixy="0" ixz="0"
@@ -293,7 +293,7 @@
         <parent link="right_leg_boogie"/>
         <child link="right_wheel_front"/>
         <axis xyz="0.0 1.0 0.0"/>
-        <limit effort="1.0" velocity="4.0"/>
+        <limit effort="100.0" velocity="4.0"/>
     </joint>
 
     <link name="right_wheel_front">
@@ -398,7 +398,7 @@
         <parent link="left_leg_boogie"/>
         <child link="left_wheel_front"/>
         <axis xyz="0.0 1.0 0.0"/>
-        <limit effort="1.0" velocity="4.0"/>
+        <limit effort="100.0" velocity="4.0"/>
     </joint>
 
     <link name="left_wheel_front">
@@ -628,7 +628,7 @@
     </gazebo>
 
     <gazebo reference="chassis">
-        <material>Gazebo/Red</material>
+        <material>Gazebo/Gray</material>
     </gazebo>
 
     <gazebo reference="right_wheel_front">
@@ -636,7 +636,7 @@
     </gazebo>
 
     <gazebo reference="right_wheel_medium">
-        <material>Gazebo/Black</material>
+        <material>Gazebo/Blue</material>
     </gazebo>
 
     <gazebo reference="right_wheel_back">
@@ -648,7 +648,7 @@
     </gazebo>
 
     <gazebo reference="left_wheel_medium">
-        <material>Gazebo/Black</material>
+        <material>Gazebo/Blue</material>
     </gazebo>
 
     <gazebo reference="left_wheel_back">
