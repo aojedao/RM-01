@@ -12,12 +12,12 @@
 
     <link name="chassis">
         <inertial>
-            <mass value="1.5"/>
+            <mass value="3.065"/>
             <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
             <inertia
-                ixx="0.00625" ixy="0" ixz="0"
-                iyy="0.00625" iyz="0"
-                izz="0.01"
+                ixx="199.731" ixy="2.097" ixz="0.161"
+                iyy="182.087" iyz="0.079"
+                izz="267.088"
             />
         </inertial>
 
@@ -88,12 +88,12 @@
         </collision>
         
         <inertial>
-            <mass value="1"/>
+            <mass value="0.974"/>
             <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
             <inertia
-                ixx="0.001" ixy="0" ixz="0"
-                iyy="0.001" iyz="0"
-                izz="0.001"
+                ixx="2555.119" ixy="60.204" ixz="-2683.738"
+                iyy="15204.978" iyz="16.365"
+                izz="12798.286"
             />
         </inertial>
 
@@ -151,12 +151,12 @@
         </collision>
         
         <inertial>
-            <mass value="1"/>
+            <mass value="0.974"/>
             <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
             <inertia
-                ixx="0.001" ixy="0" ixz="0"
-                iyy="0.001" iyz="0"
-                izz="0.001"
+                ixx="2555.119" ixy="60.204" ixz="-2683.738"
+                iyy="15204.978" iyz="16.365"
+                izz="12798.286"
             />
         </inertial>
 
@@ -214,12 +214,12 @@
         </collision>
 
         <inertial>
-        <mass value="0.01"/>
+        <mass value="0.803"/>
         <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
         <inertia
-            ixx="0.001" ixy="0" ixz="0"
-            iyy="0.001" iyz="0"
-            izz="0.001"
+            ixx="664.519" ixy="-9.047" ixz="224.365"
+                iyy="4936.122" iyz="26.955"
+                izz="4390.159"
         />
         </inertial>
 
@@ -277,13 +277,13 @@
         </collision>
 
         <inertial>
-        <mass value="0.01"/>
-        <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-        <inertia
-            ixx="0.001" ixy="0" ixz="0"
-            iyy="0.001" iyz="0"
-            izz="0.001"
-        />
+            <mass value="0.803"/>
+            <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+            <inertia
+                ixx="664.519" ixy="-9.047" ixz="224.365"
+                iyy="4936.122" iyz="26.955"
+                izz="4390.159"
+            />
         </inertial>
 
     </link>
@@ -293,7 +293,7 @@
         <parent link="right_leg_boogie"/>
         <child link="right_wheel_front"/>
         <axis xyz="0.0 1.0 0.0"/>
-        <limit effort="100.0" velocity="4.0"/>
+        <limit effort="100.0" velocity="15.0"/>
     </joint>
 
     <link name="right_wheel_front">
@@ -312,12 +312,12 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value="0.0001"/>
+            <mass value="0.514"/>
             <origin xyz="0.2990 0.1954 0.2118" rpy=" 0 0 0"/>
             <inertia
-                ixx="0.0001" ixy="0" ixz="0"
-                iyy="0.0001" iyz="0"
-                izz="0.0001"
+                ixx="3.125" ixy="0" ixz="0"
+                iyy="4.509" iyz="0"
+                izz="3.125"
             />
         </inertial>
 
@@ -328,7 +328,7 @@
         <parent link="right_leg_boogie"/>
         <child link="right_wheel_medium"/>
         <axis xyz="0.0 1.0 0.0"/>
-        <limit effort="1.0" velocity="4.0"/>
+        <limit effort="100.0" velocity="15.0"/>
     </joint>
 
     <link name="right_wheel_medium">
@@ -347,12 +347,12 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value="0.0001"/>
+            <mass value="0.514"/>
             <origin xyz="0.2990 0.1954 0.2118" rpy=" 0 0 0"/>
             <inertia
-                ixx="0.0001" ixy="0" ixz="0"
-                iyy="0.0001" iyz="0"
-                izz="0.0001"
+                ixx="3.125" ixy="0" ixz="0"
+                iyy="4.509" iyz="0"
+                izz="3.125"
             />
         </inertial>
 
@@ -363,7 +363,7 @@
         <parent link="right_leg_rocker"/>
         <child link="right_wheel_back"/>
         <axis xyz="0.0 1.0 0.0"/>
-        <limit effort="1.0" velocity="4.0"/>
+        <limit effort="100.0" velocity="15.0"/>
     </joint>
 
     <link name="right_wheel_back">
@@ -382,12 +382,12 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value="0.0001"/>
+            <mass value="0.514"/>
             <origin xyz="0.2990 0.1954 0.2118" rpy=" 0 0 0"/>
             <inertia
-                ixx="0.0001" ixy="0" ixz="0"
-                iyy="0.0001" iyz="0"
-                izz="0.0001"
+                ixx="3.125" ixy="0" ixz="0"
+                iyy="4.509" iyz="0"
+                izz="3.125"
             />
         </inertial>
 
@@ -398,7 +398,7 @@
         <parent link="left_leg_boogie"/>
         <child link="left_wheel_front"/>
         <axis xyz="0.0 1.0 0.0"/>
-        <limit effort="100.0" velocity="4.0"/>
+        <limit effort="100.0" velocity="15.0"/>
     </joint>
 
     <link name="left_wheel_front">
@@ -417,12 +417,12 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value="0.0001"/>
+            <mass value="0.514"/>
             <origin xyz="0.2990 0.1954 0.2118" rpy=" 0 0 0"/>
             <inertia
-                ixx="0.0001" ixy="0" ixz="0"
-                iyy="0.0001" iyz="0"
-                izz="0.0001"
+                ixx="3.125" ixy="0" ixz="0"
+                iyy="4.509" iyz="0"
+                izz="3.125"
             />
         </inertial>
 
@@ -433,7 +433,7 @@
         <parent link="left_leg_boogie"/>
         <child link="left_wheel_medium"/>
         <axis xyz="0.0 1.0 0.0"/>
-        <limit effort="1.0" velocity="4.0"/>
+        <limit effort="100.0" velocity="15.0"/>
     </joint>
 
     <link name="left_wheel_medium">
@@ -452,12 +452,12 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value="0.0001"/>
+            <mass value="0.514"/>
             <origin xyz="0.2990 0.1954 0.2118" rpy=" 0 0 0"/>
             <inertia
-                ixx="0.0001" ixy="0" ixz="0"
-                iyy="0.0001" iyz="0"
-                izz="0.0001"
+                ixx="3.125" ixy="0" ixz="0"
+                iyy="4.509" iyz="0"
+                izz="3.125"
             />
         </inertial>
 
@@ -468,7 +468,7 @@
         <parent link="left_leg_rocker"/>
         <child link="left_wheel_back"/>
         <axis xyz="0.0 1.0 0.0"/>
-        <limit effort="1.0" velocity="4.0"/>
+        <limit effort="100.0" velocity="15.0"/>
     </joint>
 
     <link name="left_wheel_back">       
@@ -487,12 +487,12 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value="0.0001"/>
+            <mass value="0.514"/>
             <origin xyz="0.2990 0.1954 0.2118" rpy=" 0 0 0"/>
             <inertia
-                ixx="0.0001" ixy="0" ixz="0"
-                iyy="0.0001" iyz="0"
-                izz="0.0001"
+                ixx="3.125" ixy="0" ixz="0"
+                iyy="4.509" iyz="0"
+                izz="3.125"
             />
         </inertial>
 
@@ -552,8 +552,12 @@
 
         <inertial>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <mass value="0.001"/>
-            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+            <mass value="0.253"/>
+            <inertia 
+                ixx="121.495" ixy="0.026" ixz="-8.296" 
+                iyy="1504.113" iyz="0.257" 
+                izz="1498.187"
+            />
         </inertial>
     </link>
 
